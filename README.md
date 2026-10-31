@@ -24,6 +24,20 @@ Todo o conteúdo do site fica em `data/`. Não é preciso mexer no HTML.
 | Serviços e preços | `data/services.json` |
 | Equipe | `data/team.json` |
 | Depoimentos (só aparece no site quem tiver `"verificado": true`) | `data/testimonials.json` |
+| Logo e fotos (hero, sobre, galeria) | `data/site.json`, campos `logo` e `imagens` (coloque os arquivos em `assets/img/`) |
+| Textos da seção "Sobre" e de "Como chegar" | `data/site.json`, campo `textos` |
+
+### Depoimentos
+
+1. Confira o depoimento na ficha da Good Barber no Google Maps (nome e texto iguais).
+2. Em `data/testimonials.json`, mude `"verificado": false` para `"verificado": true`.
+3. Para acrescentar um novo, copie um bloco e preencha `nome`, `nota`, `texto` e `origem`.
+
+Com pelo menos um depoimento verificado, a seção vira um carrossel com troca automática. Sem nenhum, ela mostra só a nota do Google e o botão "Ver avaliações no Google".
+
+### Fotos
+
+Coloque o arquivo em `assets/img/` (de preferência `.webp` ou `.jpg`, com até uns 300 KB) e escreva o caminho no `site.json`, por exemplo `"hero": "assets/img/hero.webp"`. Enquanto o campo estiver `null`, o site mostra um bloco escuro no lugar. Fotos da equipe vão no campo `foto` de `data/team.json`.
 
 ## Estrutura
 
