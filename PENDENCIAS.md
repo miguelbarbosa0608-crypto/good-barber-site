@@ -22,7 +22,8 @@ Itens que dependem de confirmação do dono ou de material que ainda não chegou
 
 ## Fotos e marca
 - [ ] Logo original da Good Barber em boa resolução (hoje há um logotipo provisório em texto).
-- [ ] Fotos da barbearia e dos cortes para o hero, a seção Sobre e a galeria (hoje há blocos escuros no lugar).
+- [x] Foto do salão no topo da página inicial (`assets/img/hero.webp`). A foto tem 683x811 px: se houver uma versão maior (1400 px ou mais de largura), ela fica mais nítida em telas grandes.
+- [ ] Fotos da barbearia e dos cortes para a seção Sobre e a galeria (hoje há blocos escuros no lugar).
 - [ ] Favicon e imagem de compartilhamento (Open Graph) a partir da logo original.
 
 ## Textos

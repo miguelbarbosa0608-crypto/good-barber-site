@@ -432,8 +432,8 @@
   function renderHeroMedia(site) {
     const mount = $('[data-hero-media]');
     if (!mount) return;
-    mount.innerHTML = mediaHTML(site.imagens.hero, 'Good Barber – A Barbearia', {
-      mark: 'Good Barber<small>A Barbearia</small>', w: 1200, h: 1500, eager: true
+    mount.innerHTML = mediaHTML(site.imagens.hero, 'Recepção e salão da Good Barber, no Jardim Europa', {
+      mark: 'Good Barber<small>A Barbearia</small>', w: 683, h: 811, eager: true
     });
   }
 

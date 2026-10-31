@@ -49,7 +49,7 @@
   "numeroBarbeiros": 4,
   "logo": null,
   "imagens": {
-    "hero": null,
+    "hero": "assets/img/hero.webp",
     "sobre": [null, null],
     "galeria": [null, null, null, null, null, null]
   },
