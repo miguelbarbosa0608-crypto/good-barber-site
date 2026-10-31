@@ -9,6 +9,8 @@
   document.documentElement.classList.add('js');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const page = document.body.dataset.page || '';
+  // Raiz do site a partir do endereço deste script: funciona também na 404 servida em qualquer caminho.
+  const ROOT = new URL('../', document.currentScript ? document.currentScript.src : location.href).href;
 
   // ========== ÍCONES (SVG inline, sem dependência externa) ==========
   const PATHS = {
@@ -67,7 +69,7 @@
   const slug = (s) => normalize(s).replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
   async function loadJSON(name) {
-    const res = await fetch(`data/${name}.json`, { cache: 'no-cache' });
+    const res = await fetch(new URL(`data/${name}.json`, ROOT), { cache: 'no-cache' });
     if (!res.ok) throw new Error(`Falha ao carregar data/${name}.json (${res.status})`);
     return res.json();
   }
@@ -117,18 +119,18 @@
 
   // ========== TOPO E RODAPÉ (um único trecho para todas as páginas) ==========
   const MENU = [
-    { id: 'inicio', href: 'index.html', label: 'Início' },
-    { id: 'servicos', href: 'servicos.html', label: 'Serviços' },
-    { id: 'equipe', href: 'equipe.html', label: 'Equipe' },
-    { id: 'localizacao', href: 'localizacao.html', label: 'Onde estamos' }
+    { id: 'inicio', href: ROOT, label: 'Início' },
+    { id: 'servicos', href: ROOT + 'servicos.html', label: 'Serviços' },
+    { id: 'equipe', href: ROOT + 'equipe.html', label: 'Equipe' },
+    { id: 'localizacao', href: ROOT + 'localizacao.html', label: 'Onde estamos' }
   ];
 
   function brandHTML(site) {
     // TODO: quando a logo original chegar, preencher "logo" em data/site.json (ex.: "assets/img/logo.png").
     const inner = site.logo
-      ? `<img src="${esc(site.logo)}" alt="${esc(site.nome)}" width="160" height="40">`
+      ? `<img src="${esc(new URL(site.logo, ROOT).href)}" alt="${esc(site.nome)}" width="160" height="40">`
       : `<span class="brand__text">Good Barber</span>`;
-    return `<a class="brand" href="index.html" aria-label="${esc(site.nome)}, página inicial">${inner}</a>`;
+    return `<a class="brand" href="${ROOT}" aria-label="${esc(site.nome)}, página inicial">${inner}</a>`;
   }
 
   function renderHeader(site) {
