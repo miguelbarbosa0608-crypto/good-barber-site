@@ -411,8 +411,8 @@
       <div class="about">
         <div class="about__images reveal">
           <span class="about__accent" aria-hidden="true">GB</span>
-          <div class="about__img-main">${mediaHTML(img1, 'Ambiente da Good Barber', { mark: 'GB' })}</div>
-          <div class="about__img-secondary">${mediaHTML(img2, 'Atendimento na Good Barber', { mark: '' })}</div>
+          <div class="about__img-main">${mediaHTML(img1, 'Barbeiros atendendo clientes na Good Barber', { mark: 'GB', w: 678, h: 812 })}</div>
+          <div class="about__img-secondary">${mediaHTML(img2, 'Bancada do bar e salão da Good Barber', { mark: '', w: 685, h: 808 })}</div>
         </div>
         <div class="about__content reveal reveal-d1">
           <p class="section-tag">Sobre a casa</p>
