@@ -551,25 +551,35 @@ ul { list-style: none; }
   align-items: center;
 }
 .about__images { position: relative; height: 600px; }
+/* Foto maior embaixo à esquerda e menor no alto à direita: a sobreposição cai sobre o teto,
+   sem cobrir as pessoas da foto maior. */
 .about__img-main {
   width: 70%;
   height: 85%;
-  position: relative;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   z-index: 2;
 }
 .about__img-secondary {
   position: absolute;
   right: 0;
-  bottom: 0;
+  top: 0;
   width: 55%;
   height: 55%;
   z-index: 3;
   border: 5px solid var(--black);
 }
 .about__img-main > *, .about__img-secondary > * { width: 100%; height: 100%; object-fit: cover; }
+/* Fotos levemente dessaturadas, ganham cor ao passar o mouse (como no design system) */
+.about__img-main img, .about__img-secondary img {
+  filter: grayscale(30%) sepia(0.12) brightness(0.92);
+  transition: filter 0.6s ease;
+}
+.about__img-main img:hover, .about__img-secondary img:hover { filter: none; }
 .about__accent {
   position: absolute;
-  top: -2rem;
+  bottom: -2rem;
   right: 2rem;
   font-family: var(--display);
   font-size: 10rem;
@@ -1372,8 +1382,7 @@ ul { list-style: none; }
     width: 100%;
     height: 240px;
     border: none;
-    right: auto;
-    bottom: auto;
+    inset: auto;
   }
   .about__accent { display: none; }
   .stats { grid-template-columns: 1fr 1fr; gap: 1.75rem 1.5rem; }

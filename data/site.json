@@ -50,7 +50,7 @@
   "logo": null,
   "imagens": {
     "hero": "assets/img/hero.webp",
-    "sobre": [null, null],
+    "sobre": ["assets/img/sobre/barbeiros-atendendo.webp", "assets/img/sobre/bar-ambiente.webp"],
     "galeria": [null, null, null, null, null, null]
   },
   "textos": {
