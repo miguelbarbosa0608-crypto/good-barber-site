@@ -47,5 +47,22 @@
     "trinks": { "nota": 5.0 }
   },
   "numeroBarbeiros": 4,
+  "logo": null,
+  "imagens": {
+    "hero": null,
+    "sobre": [null, null],
+    "galeria": [null, null, null, null, null, null]
+  },
+  "textos": {
+    "sobreTitulo": "Tradição e estilo no <em>Jardim Europa</em>",
+    "sobre": [
+      "No Jardim Europa, em Goiânia, a Good Barber reúne tradição, estilo e profissionalismo em estética masculina e feminina, para adultos e crianças.",
+      "Além do atendimento, a casa se dedica à formação de novos profissionais. Enquanto você espera, tem Wi-Fi, TV, bar e lanchonete, e estacionamento grátis."
+    ],
+    "comoChegar": [
+      "Estamos na Av. Inglaterra, no Jardim Europa, em Goiânia. Use o botão \"Como chegar\" para abrir a rota no Google Maps a partir de onde você estiver.",
+      "Estacionamento grátis para clientes."
+    ]
+  },
   "dominio": "TODO: definir domínio (ver DEPLOY.md)"
 }
