@@ -1,6 +1,6 @@
 [
-  { "nome": "Thiago", "funcao": "Barbeiro", "instagram": "thiago.barberr", "foto": null, "bio": "" },
-  { "nome": "Lourenço", "funcao": "Barbeiro", "instagram": "lourenco_barbers", "foto": null, "bio": "" },
-  { "nome": "João Vitor", "funcao": "Barbeiro", "instagram": "joaobarbeiro_0", "foto": null, "bio": "Especialista em cabelo crespo, liso e barba, com mais de 600 clientes atendidos." },
-  { "nome": "Kauan Borba", "funcao": "Barbeiro", "instagram": null, "foto": null, "bio": "" }
+  { "nome": "Thiago", "funcao": "Barbeiro", "instagram": "thiago.barberr", "foto": "assets/img/equipe/thiago.webp", "largura": 1280, "altura": 1600, "enquadramento": "78% center", "bio": "" },
+  { "nome": "Lourenço", "funcao": "Barbeiro", "instagram": "lourenco_barbers", "foto": "assets/img/equipe/lourenco.webp", "largura": 1200, "altura": 1600, "enquadramento": "35% center", "bio": "" },
+  { "nome": "João Vitor", "funcao": "Barbeiro", "instagram": "joaobarbeiro_0", "foto": "assets/img/equipe/joao-vitor.webp", "largura": 1280, "altura": 1600, "enquadramento": "60% center", "bio": "Especialista em cabelo crespo, liso e barba, com mais de 600 clientes atendidos." },
+  { "nome": "Kauan Borba", "funcao": "Barbeiro", "instagram": null, "foto": "assets/img/equipe/kauan-borba.webp", "largura": 1200, "altura": 1600, "enquadramento": "30% center", "bio": "" }
 ]

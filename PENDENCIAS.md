@@ -14,7 +14,7 @@ Itens que dependem de confirmação do dono ou de material que ainda não chegou
 ## Equipe (`data/team.json`)
 - [ ] **Lourenço** pode aparecer na Trinks como "Keven". Confirmar o nome certo.
 - [ ] **Kauan Borba:** Instagram pendente.
-- [ ] Fotos dos quatro barbeiros (hoje aparecem as iniciais).
+- [x] Fotos dos quatro barbeiros (adicionadas em `assets/img/equipe/`).
 
 ## Depoimentos (`data/testimonials.json`)
 - [ ] Conferir os cinco depoimentos na ficha **GoodBarber** do Google Maps. Os prints misturavam avaliações de outra barbearia. Só mudar para `"verificado": true` depois de conferir cada um.
@@ -22,7 +22,7 @@ Itens que dependem de confirmação do dono ou de material que ainda não chegou
 
 ## Fotos e marca
 - [ ] Logo original da Good Barber em boa resolução (hoje há um logotipo provisório em texto).
-- [ ] Fotos da barbearia, da equipe e dos cortes (hoje há blocos escuros no lugar).
+- [ ] Fotos da barbearia e dos cortes para o hero, a seção Sobre e a galeria (hoje há blocos escuros no lugar).
 - [ ] Favicon e imagem de compartilhamento (Open Graph) a partir da logo original.
 
 ## Textos
