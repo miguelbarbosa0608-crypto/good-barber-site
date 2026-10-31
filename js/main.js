@@ -586,7 +586,7 @@
     if (!mount) return;
     mount.innerHTML = team.map((m, i) => {
       const photo = m.foto
-        ? `<img src="${esc(m.foto)}" alt="${esc(m.nome)}, ${esc(m.funcao.toLowerCase())} da Good Barber" width="600" height="800" loading="lazy" decoding="async">`
+        ? `<img src="${esc(m.foto)}" alt="${esc(m.nome)}, ${esc(m.funcao.toLowerCase())} da Good Barber" width="${m.largura || 600}" height="${m.altura || 800}" loading="lazy" decoding="async"${m.enquadramento ? ` style="object-position:${esc(m.enquadramento)}"` : ''}>`
         : `<div class="ph" role="img" aria-label="${esc(m.nome)} (foto em breve)"><span class="team-card__initials" aria-hidden="true">${esc(initials(m.nome))}</span></div>`;
       const insta = m.instagram
         ? `<a class="icon-btn" href="https://www.instagram.com/${esc(m.instagram)}" ${ext} aria-label="Instagram de ${esc(m.nome)} (@${esc(m.instagram)})">${icon('instagram')}</a>`
