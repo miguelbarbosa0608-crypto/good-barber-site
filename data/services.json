@@ -1,0 +1,36 @@
+{
+  "categorias": ["Cortes", "Barba", "Combos", "Selagem e tratamentos", "Química e cor", "Especial", "Good Club"],
+  "destaques": ["corte-masculino", "barba", "corte-e-barba", "corte-sobrancelha"],
+  "servicos": [
+    { "id": "corte-masculino", "categoria": "Cortes", "nome": "Corte Masculino", "descricao": "Corte com higienização e secagem.", "duracao": "30 min", "preco": 40, "icone": "tesoura" },
+    { "id": "corte-sobrancelha", "categoria": "Cortes", "nome": "Corte + Sobrancelha", "descricao": "Corte de cabelo com acabamento da sobrancelha.", "duracao": "30 min", "preco": 50, "icone": "olho" },
+    { "id": "pezinho", "categoria": "Cortes", "nome": "Pezinho", "descricao": "Acabamento do contorno do cabelo.", "duracao": "10 min", "preco": 10, "icone": "navalha" },
+
+    { "id": "barba", "categoria": "Barba", "nome": "Barba", "descricao": "Barba feita e alinhada.", "duracao": "20 min", "preco": 40, "icone": "navalha" },
+    { "id": "bigode-pesinho", "categoria": "Barba", "nome": "Bigode + Pesinho", "descricao": "Acabamento do bigode e do contorno.", "duracao": "30 min", "preco": 50, "icone": "navalha" },
+
+    { "id": "corte-e-barba", "categoria": "Combos", "nome": "Corte e Barba", "descricao": "Corte de cabelo e barba no mesmo horário.", "duracao": "35 min", "preco": 80, "icone": "combo" },
+    { "id": "corte-barba-sobrancelha", "categoria": "Combos", "nome": "Corte + Barba + Sobrancelha", "descricao": "Corte, barba e sobrancelha no mesmo horário.", "duracao": "30 min", "preco": 90, "icone": "combo" },
+
+    { "id": "selagem", "categoria": "Selagem e tratamentos", "nome": "Selagem", "descricao": "Selagem com hidratação.", "duracao": "50 min", "preco": 90, "icone": "gota" },
+    { "id": "corte-e-selagem", "categoria": "Selagem e tratamentos", "nome": "Corte e Selagem", "descricao": "Corte e selagem com hidratação.", "duracao": "1h40", "preco": 130, "icone": "gota" },
+    { "id": "barba-pesinho-selagem", "categoria": "Selagem e tratamentos", "nome": "Barba + Pesinho + Selagem", "descricao": "Barba, pezinho e selagem com hidratação.", "duracao": "40 min", "preco": 140, "icone": "gota" },
+    { "id": "corte-barba-selagem", "categoria": "Selagem e tratamentos", "nome": "Corte + Barba + Selagem", "descricao": "Corte, barba e selagem no mesmo horário.", "duracao": "1h10", "preco": 170, "icone": "gota" },
+    { "id": "esfoliacao-facial", "categoria": "Selagem e tratamentos", "nome": "Esfoliação Facial com Máscara Negra e Massagem Facial com Terapia", "descricao": "Esfoliação facial com máscara negra e massagem facial.", "duracao": "10 min", "preco": 30, "icone": "folha" },
+
+    { "id": "pigmentacao-simples", "categoria": "Química e cor", "nome": "Pigmentação Simples", "descricao": "Pigmentação para realçar o desenho do corte ou da barba.", "duracao": "15 min", "preco": 30, "icone": "pincel" },
+    { "id": "pigmentacao-completa", "categoria": "Química e cor", "nome": "Pigmentação Completa", "descricao": "Pigmentação completa do cabelo ou da barba.", "duracao": "45 min", "preco": 30, "icone": "pincel" },
+    { "id": "combo-luzes", "categoria": "Química e cor", "nome": "Combo Luzes", "descricao": "Combo com luzes.", "duracao": "1h", "preco": 180, "icone": "pincel" },
+    { "id": "combo-platinado", "categoria": "Química e cor", "nome": "Combo Platinado", "descricao": "Combo com platinado.", "duracao": "2h", "preco": 200, "icone": "pincel" },
+
+    { "id": "visagismo", "categoria": "Especial", "nome": "Visagismo", "descricao": "Atendimento de visagismo.", "duracao": "1h", "preco": 700, "icone": "estrela" }
+  ],
+  "goodClub": {
+    "aviso": "Pacotes do Good Club são combinados direto com a barbearia, sem agendamento online.",
+    "pacotes": [
+      { "id": "club-corte-e-barba", "nome": "Corte e Barba", "descricao": "TODO: confirmar período e quantidade de atendimentos do pacote.", "preco": 260, "destaque": true },
+      { "id": "club-barba", "nome": "Barba", "descricao": "TODO: confirmar período e quantidade de atendimentos do pacote.", "preco": 130, "destaque": false },
+      { "id": "club-corte", "nome": "Corte", "descricao": "TODO: confirmar período e quantidade de atendimentos do pacote.", "preco": 130, "destaque": false }
+    ]
+  }
+}

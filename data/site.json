@@ -1,0 +1,51 @@
+{
+  "nome": "Good Barber – A Barbearia",
+  "nomeCurto": "Good Barber",
+  "unidade": "Good Barber, Jardim Europa",
+  "frase": "Tradição, Estilo e Profissionalismo",
+  "posicionamento": "Estética masculina e feminina, e formação de novos profissionais",
+  "endereco": {
+    "logradouro": "Av. Inglaterra, Qd 131, Lt. 14",
+    "bairro": "Jardim Europa",
+    "cidade": "Goiânia",
+    "uf": "GO",
+    "cep": "74330-200",
+    "completo": "Av. Inglaterra, Qd 131, Lt. 14, Jardim Europa, Goiânia, GO, CEP 74330-200"
+  },
+  "coordenadas": { "lat": -16.7161338, "lng": -49.3069941 },
+  "mapa": {
+    "embed": "https://www.google.com/maps?q=-16.7161338,-49.3069941&z=17&output=embed",
+    "comoChegar": "https://www.google.com/maps/dir/?api=1&destination=-16.7161338,-49.3069941"
+  },
+  "telefone": {
+    "exibicao": "(62) 99128-0297",
+    "link": "tel:+5562991280297"
+  },
+  "whatsapp": "https://wa.me/5562991280297?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20Good%20Barber.",
+  "whatsappGoodClub": "https://wa.me/5562991280297?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Good%20Club.",
+  "instagram": {
+    "usuario": "@bgoodbarber",
+    "url": "https://www.instagram.com/bgoodbarber"
+  },
+  "agendamento": "https://www.trinks.com/good-barber",
+  "avaliacoesGoogle": "https://www.google.com/maps/search/?api=1&query=Good%20Barber%20A%20Barbearia%20Jardim%20Europa%20Goi%C3%A2nia",
+  "fusoHorario": "America/Sao_Paulo",
+  "horarios": [
+    { "dia": "Domingo", "abre": null, "fecha": null },
+    { "dia": "Segunda", "abre": "08:00", "fecha": "20:00" },
+    { "dia": "Terça", "abre": "08:00", "fecha": "20:00" },
+    { "dia": "Quarta", "abre": "08:00", "fecha": "20:00" },
+    { "dia": "Quinta", "abre": "08:00", "fecha": "20:00" },
+    { "dia": "Sexta", "abre": "08:00", "fecha": "20:00" },
+    { "dia": "Sábado", "abre": "08:00", "fecha": "20:00" }
+  ],
+  "horarioResumo": "Segunda a sábado, 08:00 às 20:00 · Domingo fechado",
+  "pagamento": ["Pix", "Dinheiro", "Débito", "Crédito (Visa, Mastercard, Amex, Elo)"],
+  "facilidades": ["Wi-Fi", "Estacionamento grátis", "Bar e lanchonete", "TV", "Atende adultos e crianças"],
+  "provaSocial": {
+    "google": { "nota": 5.0, "avaliacoes": 80, "texto": "mais de 80 avaliações" },
+    "trinks": { "nota": 5.0 }
+  },
+  "numeroBarbeiros": 4,
+  "dominio": "TODO: definir domínio (ver DEPLOY.md)"
+}
