@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: trocar TODO-DOMINIO pelo domínio definitivo (ver DEPLOY.md)
+Sitemap: https://TODO-DOMINIO/sitemap.xml
