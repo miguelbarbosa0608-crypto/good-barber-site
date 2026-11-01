@@ -51,7 +51,27 @@
   "imagens": {
     "hero": "assets/img/hero.webp",
     "sobre": ["assets/img/sobre/barbeiros-atendendo.webp", "assets/img/sobre/bar-ambiente.webp"],
-    "galeria": [null, null, null, null, null, null]
+    "galeria": [
+      "assets/img/cortes/corte-01.webp",
+      "assets/img/cortes/corte-02.webp",
+      "assets/img/cortes/corte-03.webp",
+      "assets/img/cortes/corte-04.webp",
+      "assets/img/cortes/corte-05.webp",
+      "assets/img/cortes/corte-06.webp",
+      "assets/img/cortes/corte-07.webp",
+      "assets/img/cortes/corte-08.webp",
+      "assets/img/cortes/corte-09.webp",
+      "assets/img/cortes/corte-10.webp",
+      "assets/img/cortes/corte-11.webp",
+      "assets/img/cortes/corte-12.webp",
+      "assets/img/cortes/corte-13.webp",
+      "assets/img/cortes/corte-14.webp",
+      "assets/img/cortes/corte-15.webp",
+      "assets/img/cortes/corte-16.webp",
+      "assets/img/cortes/corte-17.webp",
+      "assets/img/cortes/corte-18.webp",
+      "assets/img/cortes/corte-19.webp"
+    ]
   },
   "textos": {
     "sobreTitulo": "Tradição e estilo no <em>Jardim Europa</em>",
