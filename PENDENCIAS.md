@@ -24,7 +24,8 @@ Itens que dependem de confirmação do dono ou de material que ainda não chegou
 - [ ] Logo original da Good Barber em boa resolução (hoje há um logotipo provisório em texto).
 - [x] Foto do salão no topo da página inicial (`assets/img/hero.webp`). A foto tem 683x811 px: se houver uma versão maior (1400 px ou mais de largura), ela fica mais nítida em telas grandes.
 - [x] Fotos da seção Sobre (`assets/img/sobre/`).
-- [ ] Seis fotos de cortes ou do ambiente para a galeria do Instagram (hoje há blocos escuros no lugar).
+- [x] Fotos de cortes na galeria (19 fotos em `assets/img/cortes/`, lista em `data/site.json`).
+- [ ] Confirmar a autorização de uso de imagem das pessoas nas fotos de cortes, principalmente as crianças e os adolescentes (autorização do responsável). Para tirar uma foto, basta apagar a linha dela em `imagens.galeria`.
 - [ ] Favicon e imagem de compartilhamento (Open Graph) a partir da logo original.
 
 ## Textos

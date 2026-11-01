@@ -440,10 +440,33 @@
   function renderGallery(site) {
     const mount = $('[data-gallery]');
     if (!mount) return;
-    mount.innerHTML = site.imagens.galeria.map((src, i) => `
-      <a class="gallery-strip__item" data-link="instagram" aria-label="Foto ${i + 1} no Instagram ${esc(site.instagram.usuario)}">
-        ${mediaHTML(src, `Trabalho da Good Barber, foto ${i + 1}`, { mark: 'GB', w: 600, h: 600 })}
-      </a>`).join('');
+    const fotos = site.imagens.galeria;
+    mount.innerHTML = fotos.map((src, i) => `
+      <a class="gallery-strip__item" data-link="instagram" aria-label="Corte ${i + 1} de ${fotos.length}, ver no Instagram ${esc(site.instagram.usuario)}">
+        ${mediaHTML(src, `Corte feito na Good Barber, foto ${i + 1}`, { mark: 'GB', w: 600, h: 600 })}
+      </a>`).join('') + `
+      <a class="gallery-strip__item gallery-strip__more" data-link="instagram">
+        ${icon('instagram')}
+        <span>Ver mais no Instagram</span>
+      </a>`;
+
+    // A grade mostra só as primeiras linhas; o resto abre no botão. O CSS define quantas por tela.
+    const toggle = $('[data-gallery-toggle]');
+    if (!toggle) return;
+    const label = $('span', toggle);
+    const sync = () => {
+      const open = mount.classList.contains('is-open');
+      const hasHidden = $$('.gallery-strip__item', mount).some((el) => getComputedStyle(el).display === 'none');
+      toggle.hidden = !open && !hasHidden;
+      toggle.setAttribute('aria-expanded', String(open));
+      label.textContent = open ? 'Ver menos' : 'Ver mais cortes';
+    };
+    toggle.addEventListener('click', () => {
+      mount.classList.toggle('is-open');
+      sync();
+    });
+    window.addEventListener('resize', sync);
+    sync();
   }
 
   // ========== SERVIÇOS ==========

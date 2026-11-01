@@ -893,7 +893,7 @@ ul { list-style: none; }
 /* ========== GALERIA ========== */
 .gallery-strip {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 3px;
 }
 .gallery-strip__item {
@@ -921,6 +921,27 @@ ul { list-style: none; }
 .gallery-strip__item:hover::after,
 .gallery-strip__item:focus-visible::after { opacity: 1; }
 .gallery-strip__item .ph__mark { font-size: 1.6rem; }
+/* Grade fechada: 3 linhas de 5 no computador, 5 de 3 no tablet e 4 de 2 no celular. */
+.gallery-strip:not(.is-open) .gallery-strip__item:nth-child(n+16) { display: none; }
+/* Última casa da grade aberta: completa a linha e leva ao Instagram. */
+.gallery-strip__more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 1rem;
+  text-align: center;
+  background: var(--black-light);
+  color: var(--gold);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.gallery-strip__more .icon { width: 2rem; height: 2rem; }
+.gallery-strip__more:hover { color: var(--gold-light); }
+.gallery-actions { display: flex; justify-content: center; margin-top: 2.5rem; padding-inline: var(--gutter); }
+.gallery-actions [hidden] { display: none; }
 .insta-handle {
   display: inline-flex;
   align-items: center;
@@ -1406,6 +1427,7 @@ ul { list-style: none; }
   .team-grid { grid-template-columns: 1fr; max-width: 420px; }
   .location__actions-row { grid-template-columns: 1fr; }
   .gallery-strip { grid-template-columns: repeat(2, 1fr); }
+  .gallery-strip:not(.is-open) .gallery-strip__item:nth-child(n+9) { display: none; }
   .btn { padding-inline: 1.5rem; letter-spacing: 0.18em; }
   .hours th, .hours td { padding-inline: 0.5rem; }
 }
