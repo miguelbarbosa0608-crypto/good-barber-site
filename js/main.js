@@ -433,7 +433,7 @@
     const mount = $('[data-hero-media]');
     if (!mount) return;
     mount.innerHTML = mediaHTML(site.imagens.hero, 'Recepção e salão da Good Barber, no Jardim Europa', {
-      mark: 'Good Barber<small>A Barbearia</small>', w: 683, h: 811, eager: true
+      mark: 'Good Barber<small>A Barbearia</small>', w: 1151, h: 1367, eager: true
     });
   }
 
@@ -441,32 +441,71 @@
     const mount = $('[data-gallery]');
     if (!mount) return;
     const fotos = site.imagens.galeria;
-    mount.innerHTML = fotos.map((src, i) => `
-      <a class="gallery-strip__item" data-link="instagram" aria-label="Corte ${i + 1} de ${fotos.length}, ver no Instagram ${esc(site.instagram.usuario)}">
-        ${mediaHTML(src, `Corte feito na Good Barber, foto ${i + 1}`, { mark: 'GB', w: 600, h: 600 })}
-      </a>`).join('') + `
-      <a class="gallery-strip__item gallery-strip__more" data-link="instagram">
-        ${icon('instagram')}
-        <span>Ver mais no Instagram</span>
-      </a>`;
+    const group = (clone) => `
+      <div class="gallery-strip__group"${clone ? ' aria-hidden="true"' : ''}>
+        ${fotos.map((src, i) => `
+        <a class="gallery-strip__item" data-link="instagram"${clone ? ' tabindex="-1"' : ''} aria-label="Corte ${i + 1} de ${fotos.length}, ver no Instagram ${esc(site.instagram.usuario)}">
+          ${mediaHTML(src, `Corte feito na Good Barber, foto ${i + 1}`, { mark: 'GB', w: 600, h: 600 })}
+        </a>`).join('')}
+      </div>`;
+    // Dois grupos iguais para o loop contínuo; o segundo fica oculto para leitores de tela.
+    mount.innerHTML = group(false) + group(true);
+    initGalleryCarousel(mount);
+  }
 
-    // A grade mostra só as primeiras linhas; o resto abre no botão. O CSS define quantas por tela.
-    const toggle = $('[data-gallery-toggle]');
-    if (!toggle) return;
-    const label = $('span', toggle);
-    const sync = () => {
-      const open = mount.classList.contains('is-open');
-      const hasHidden = $$('.gallery-strip__item', mount).some((el) => getComputedStyle(el).display === 'none');
-      toggle.hidden = !open && !hasHidden;
-      toggle.setAttribute('aria-expanded', String(open));
-      label.textContent = open ? 'Ver menos' : 'Ver mais cortes';
+  function initGalleryCarousel(strip) {
+    const first = $('.gallery-strip__group', strip);
+    const SPEED = 45; // pixels por segundo
+    let pos = 0;
+    let last = null;
+    let hovering = false;
+    let focused = false;
+    let holdUntil = 0;
+
+    // Passou de um grupo inteiro: volta a mesma distância, sem salto visível.
+    let noWrapUntil = 0;
+    const wrap = () => {
+      if (performance.now() < noWrapUntil) return;
+      const size = first.offsetWidth;
+      if (size && strip.scrollLeft >= size) strip.scrollLeft -= size;
     };
-    toggle.addEventListener('click', () => {
-      mount.classList.toggle('is-open');
-      sync();
-    });
-    window.addEventListener('resize', sync);
-    sync();
+    strip.addEventListener('scroll', wrap, { passive: true });
+
+    // Pausa um pouco depois de a pessoa mexer (dedo ou setas).
+    const hold = (ms) => { holdUntil = performance.now() + ms; };
+    strip.addEventListener('mouseenter', () => { hovering = true; });
+    strip.addEventListener('mouseleave', () => { hovering = false; });
+    strip.addEventListener('focusin', () => { focused = true; });
+    strip.addEventListener('focusout', () => { focused = false; });
+    strip.addEventListener('touchstart', () => hold(3000), { passive: true });
+    strip.addEventListener('touchmove', () => hold(3000), { passive: true });
+
+    const move = (dir) => {
+      const step = $('.gallery-strip__item', strip).offsetWidth + 3;
+      hold(1500);
+      noWrapUntil = performance.now() + 900;
+      if (dir < 0 && strip.scrollLeft < step) strip.scrollLeft += first.offsetWidth;
+      strip.scrollBy({ left: dir * step, behavior: reduceMotion ? 'auto' : 'smooth' });
+    };
+    $('[data-gallery-prev]')?.addEventListener('click', () => move(-1));
+    $('[data-gallery-next]')?.addEventListener('click', () => move(1));
+
+    // Com movimento reduzido não há rolagem automática: seguem as setas e o dedo.
+    if (reduceMotion) return;
+    const tick = (now) => {
+      const dt = last === null ? 0 : Math.min(now - last, 100);
+      last = now;
+      if (hovering || focused || now < holdUntil) {
+        pos = strip.scrollLeft;
+      } else {
+        pos += (SPEED * dt) / 1000;
+        const size = first.offsetWidth;
+        if (size && pos >= size) pos -= size;
+        strip.scrollLeft = pos;
+      }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
   }
 
   // ========== SERVIÇOS ==========
