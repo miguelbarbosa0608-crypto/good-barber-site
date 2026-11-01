@@ -458,7 +458,7 @@ ul { list-style: none; }
 .hero__media img,
 .hero__media .ph { width: 100%; height: 100%; object-fit: cover; }
 /* Foto em tom quente e dessaturado, como no design system */
-.hero__media img { filter: saturate(0.7) sepia(0.28) brightness(0.8) contrast(1.1); }
+.hero__media img { object-position: center 70%; filter: saturate(0.8) sepia(0.2) brightness(0.86) contrast(1.08); }
 .hero__media::after {
   content: '';
   position: absolute;
@@ -891,12 +891,18 @@ ul { list-style: none; }
 }
 
 /* ========== GALERIA ========== */
+/* Carrossel: rola sozinho por JS; a largura de cada foto define quantas aparecem por tela. */
 .gallery-strip {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 3px;
+  --foto: 20vw;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
+.gallery-strip::-webkit-scrollbar { display: none; }
+.gallery-strip__group { display: flex; flex-shrink: 0; gap: 3px; padding-right: 3px; }
 .gallery-strip__item {
+  flex: 0 0 var(--foto);
   aspect-ratio: 1;
   overflow: hidden;
   position: relative;
@@ -921,27 +927,7 @@ ul { list-style: none; }
 .gallery-strip__item:hover::after,
 .gallery-strip__item:focus-visible::after { opacity: 1; }
 .gallery-strip__item .ph__mark { font-size: 1.6rem; }
-/* Grade fechada: 3 linhas de 5 no computador, 5 de 3 no tablet e 4 de 2 no celular. */
-.gallery-strip:not(.is-open) .gallery-strip__item:nth-child(n+16) { display: none; }
-/* Última casa da grade aberta: completa a linha e leva ao Instagram. */
-.gallery-strip__more {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.85rem;
-  padding: 1rem;
-  text-align: center;
-  background: var(--black-light);
-  color: var(--gold);
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-.gallery-strip__more .icon { width: 2rem; height: 2rem; }
-.gallery-strip__more:hover { color: var(--gold-light); }
-.gallery-actions { display: flex; justify-content: center; margin-top: 2.5rem; padding-inline: var(--gutter); }
-.gallery-actions [hidden] { display: none; }
+.gallery-actions { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 2.5rem; padding-inline: var(--gutter); }
 .insta-handle {
   display: inline-flex;
   align-items: center;
@@ -1383,7 +1369,7 @@ ul { list-style: none; }
   .location__map { min-height: 340px; }
   .info-grid { grid-template-columns: 1fr 1fr; }
   .club__grid { grid-template-columns: 1fr; max-width: 520px; }
-  .gallery-strip { grid-template-columns: repeat(3, 1fr); }
+  .gallery-strip { --foto: 33.34vw; }
 }
 
 @media (max-width: 860px) {
@@ -1426,8 +1412,7 @@ ul { list-style: none; }
   .stat__number { font-size: 2.2rem; }
   .team-grid { grid-template-columns: 1fr; max-width: 420px; }
   .location__actions-row { grid-template-columns: 1fr; }
-  .gallery-strip { grid-template-columns: repeat(2, 1fr); }
-  .gallery-strip:not(.is-open) .gallery-strip__item:nth-child(n+9) { display: none; }
+  .gallery-strip { --foto: 50vw; }
   .btn { padding-inline: 1.5rem; letter-spacing: 0.18em; }
   .hours th, .hours td { padding-inline: 0.5rem; }
 }
