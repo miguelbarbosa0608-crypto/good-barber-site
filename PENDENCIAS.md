@@ -32,7 +32,8 @@ Itens que dependem de confirmação do dono ou de material que ainda não chegou
 - [ ] Revisar o texto da seção "Sobre" (rascunho escrito só com os fatos conhecidos).
 
 ## Domínio e publicação
-- [ ] Escolher e registrar o domínio. Depois, atualizar `sitemap.xml`, `robots.txt`, as tags Open Graph, o JSON-LD e `data/site.json` (`dominio`).
+- [x] Site publicado em https://miguelbarbosa0608-crypto.github.io/good-barber-site/ (GitHub Pages).
+- [ ] Escolher e registrar o domínio. Depois, seguir o passo a passo do `DEPLOY.md`.
 
 ## Página futura
 - [ ] **Curso de formação de barbeiros:** criar a página depois que o dono confirmar o curso (conteúdo, datas, valores).
