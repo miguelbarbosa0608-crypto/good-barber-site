@@ -4,7 +4,15 @@ O site é estático (HTML, CSS e JavaScript). Não precisa de banco de dados nem
 
 ---
 
-## Opção recomendada: Cloudflare Pages (grátis)
+## Onde o site está hoje: GitHub Pages
+
+O site está no ar em **https://miguelbarbosa0608-crypto.github.io/good-barber-site/**. Cada `git push` em `main` publica sozinho, em cerca de um minuto. O repositório precisa ficar público para isso funcionar no plano grátis do GitHub.
+
+Ao trocar para outro serviço ou para um domínio próprio, em `404.html` ajuste também a pequena linha de script que define a base do site (`/good-barber-site/`).
+
+---
+
+## Alternativa com repositório privado: Cloudflare Pages (grátis)
 
 Cada `git push` em `main` publica o site sozinho, em cerca de um minuto. (Os nomes dos menus do Cloudflare podem mudar um pouco com o tempo; a ideia é sempre a mesma.)
 
@@ -46,7 +54,7 @@ A página `404.html` é usada automaticamente pelo Cloudflare Pages quando algu�
    - **Cloudflare Pages:** no projeto, abra **Domínios personalizados > Configurar domínio** e siga as instruções. O jeito mais simples é mudar os servidores DNS do domínio (no Registro.br, em "DNS > Alterar servidores DNS") para os dois que o Cloudflare indicar.
    - **Hostinger:** no Registro.br, troque os servidores DNS para os da Hostinger (aparecem no hPanel, em **Domínios**).
 4. **HTTPS:** o Cloudflare ativa o certificado sozinho. Na Hostinger, ative em **Segurança > SSL** (é grátis). A propagação do DNS pode levar algumas horas.
-5. **Depois do domínio**, troque `TODO-DOMINIO` pelo domínio real (por exemplo, `goodbarber.com.br`) nestes arquivos:
+5. **Depois do domínio**, troque `miguelbarbosa0608-crypto.github.io/good-barber-site` pelo domínio real (por exemplo, `goodbarber.com.br`) nestes arquivos:
    - `sitemap.xml` e `robots.txt`
    - as tags `canonical` e `og:url`/`og:image` no topo de cada página `.html`
    - `data/site.json`, campo `dominio`

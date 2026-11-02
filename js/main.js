@@ -138,7 +138,7 @@
     if (!mount) return;
     const cur = (id) => (id === page ? ' aria-current="page"' : '');
     mount.outerHTML = `
-      <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+      <a class="skip-link" href="${location.pathname}#conteudo">Pular para o conteúdo</a>
       <header class="nav" id="nav">
         ${brandHTML(site)}
         <nav aria-label="Principal">
